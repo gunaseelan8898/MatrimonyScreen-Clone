@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, ScrollView, Image,TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, Image,TouchableOpacity ,Dimensions} from 'react-native'
 
  import USER from '../data/dummy'
 
@@ -10,16 +10,16 @@ const Card = (props) => {
             <View style={{ height: 200, width: '100%', backgroundColor: '#e1e5f0', marginTop: 20 }}>
                 <Text style={{ fontSize: 17, fontWeight: 'bold', alignSelf: 'center', color: 'black', marginVertical:13 }}>Your Daily Recommendation's for 1 Dec</Text>
              
-            <ScrollView horizontal={true} style={{marginHorizontal:10}}>
+            <ScrollView horizontal={true} style={{marginHorizontal:Dimensions.get('window').width < 500 ? 5 :10}}>
                 {USER.map((User) =>
-                    <View key={User.id} style={{ height: 100, width:60, alignItems: 'center', justifyContent: 'center',marginHorizontal:5 }}>
-                        <Image source={User.imageUrl} style={{ height:50, width:50, borderRadius: 70 }} />
-                        <Text style={{ fontSize:12, color: 'black'}} >
+                    <View key={User.id} style={{ height: 100, width:Dimensions.get('window').width < 500 ?55:60, alignItems: 'center', justifyContent: 'center',marginHorizontal:5 }}>
+                        <Image source={User.imageUrl} style={{ height:Dimensions.get('window').height < 850 ? 40:50, width:Dimensions.get('window').width < 500 ?40:50, borderRadius: 70 }} />
+                        <Text style={{ fontSize:Dimensions.get('window').width < 500 ?10:12, color: 'black'}} >
                             {User.name}
                         </Text>
                     </View>
                 )}
-                <TouchableOpacity style={{height:50,width:50,backgroundColor:'#eb9800',borderRadius:70,marginTop:20,justifyContent:'center',alignItems:'center'}}>
+                <TouchableOpacity style={{height:Dimensions.get('window').height < 850 ?45:50,width:Dimensions.get('window').width < 500 ?45:50,backgroundColor:'#eb9800',borderRadius:70,marginTop:Dimensions.get('window').height < 850 ?23:20,justifyContent:'center',alignItems:'center'}}>
                 <Image source={require('../assets/arrowwhite.png')} resizeMode='contain' style={{height:15,width:15,marginLeft:5,alignSelf:'center'}} />
                 </TouchableOpacity>
             </ScrollView>
