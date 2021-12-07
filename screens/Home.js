@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, StatusBar, Image, TouchableOpacity,Dimensions } from 'react-native'
+import { StyleSheet, Text, View, StatusBar, Image, TouchableOpacity} from 'react-native'
 import LinearGradient from 'react-native-linear-gradient';
 
 import Scroll from '../components/Scroll';
@@ -33,7 +33,7 @@ const Home = (props) => {
                     <Text style={{ color: 'white', fontSize: 15 }}>Good Evening!</Text>
                     <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 15 }}>Gunaseelan</Text>
                 </View>
-                <View  style={{flexDirection:'row', marginTop:98,marginLeft:Dimensions.get('window').width < 500 ? 160 : 190,}}>
+                <View  style={{flexDirection:'row', marginTop:98,marginLeft:190,}}>
                 <TouchableOpacity>
                     <Image source={require('../assets/message.png')} resizeMode='contain' style={{height: 30, width: 20, }} />
                 </TouchableOpacity>
@@ -42,7 +42,7 @@ const Home = (props) => {
                 </TouchableOpacity>
                 </View>
             </LinearGradient>
-            <View style={{ flex:Dimensions.get('window').height < 850 ? 2.5 : 4, backgroundColor: '#f7f7f7', borderTopLeftRadius: 25, borderTopRightRadius: 25, }}>
+            <View style={{ flex:4, backgroundColor: '#f7f7f7', borderTopLeftRadius: 25, borderTopRightRadius: 25, }}>
                 <Scroll />
             </View>
             <Tab/>  
@@ -55,8 +55,8 @@ export default Home
 const styles = StyleSheet.create({
     regular: {
         position: 'absolute',
-        top:Dimensions.get('window').height < 850 ? 30 : 40,
-        left:Dimensions.get('window').width < 500 ? 80 : 100,
+        top:40,
+        left:100,
         height: 35,
         width: 80,
         borderRadius: 50,
@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
     },
     prime: {
         position: 'absolute',
-        top: Dimensions.get('window').height < 850 ? 33 : 40,
-        left:Dimensions.get('window').width < 500 ? 140 : 160,
+        top:40,
+        left:160,
         height: 30,
         width: 100,
         backgroundColor: 'white',
